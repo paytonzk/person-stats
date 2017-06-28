@@ -19,13 +19,12 @@ function handleSubmit(ev) {
 
   const colorItem = document.createElement('li')
   colorItem.textContent = 'Favorite Color: '
- 
+
   colorItem.appendChild(renderColor(color))
 
   list.appendChild(colorItem)
 
   div.appendChild(list)
-
 }
 
 function renderColor(color){
