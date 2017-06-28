@@ -9,22 +9,27 @@ function handleSubmit(ev) {
   
   const list = document.createElement('ul')
 
-  const nameItem = document.createElement('li')
-  nameItem.textContent = `Name: ${name}`
-  list.appendChild(nameItem)
-
   const ageItem = document.createElement('li')
-  ageItem.textContent = `Age: ${age}`
+  renderListItem(ageItem, 'Age: ', age)
   list.appendChild(ageItem)
 
+  const nameItem = document.createElement('li')
+  renderListItem(nameItem, 'Name: ', name)
+  list.appendChild(nameItem)
+  
   const colorItem = document.createElement('li')
-  colorItem.textContent = 'Favorite Color: '
-
+  renderListItem(colorItem, 'Favorite: ', color)
   colorItem.appendChild(renderColor(color))
+  list.appendChild(colorItem)
 
   list.appendChild(colorItem)
 
   div.appendChild(list)
+}
+
+function renderListItem(item, title, element){
+  item.textContent = `${title} ${element}`
+  return item
 }
 
 function renderColor(color){
